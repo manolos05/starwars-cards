@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-link {
+  color: rgb(228, 228, 222);
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: rgb(255, 255, 255);
+
+}
+
+.home {
+  background-color: black;
+}
+

@@ -56,7 +56,7 @@ export const PeopleCard = () => {
       </div>
       <div className="mt-4 d-flex  justify-content-center">
         <Link to="/People">
-          <button className="btn btn-secondary bb">Back to home</button>
+          <button className="btn btn-secondary bb">Back to Characters</button>
         </Link>
       </div>
     </>

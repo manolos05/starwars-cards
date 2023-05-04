@@ -34,24 +34,29 @@ const Planets = () => {
           <div></div>
         )}
       </div>
-      <button
-        disabled={
-          planets.next === "https://www.swapi.tech/api/planets?page=6&limit=10"
-        }
-        onClick={() => {
-          setUrl(planets.next);
-        }}
-      >
-        next
-      </button>
-      <button
-        disabled={planets.previous === null}
-        onClick={() => {
-          setUrl(planets.previous);
-        }}
-      >
-        Previous
-      </button>
+      <div className="d-flex justify-content-center mb-4">
+        <button
+          className="btn btn-secondary bb"
+          disabled={
+            planets.next ===
+            "https://www.swapi.tech/api/planets?page=6&limit=10"
+          }
+          onClick={() => {
+            setUrl(planets.next);
+          }}
+        >
+          Next
+        </button>
+        <button
+          className="btn btn-secondary mx-2 bb"
+          disabled={planets.previous === null}
+          onClick={() => {
+            setUrl(planets.previous);
+          }}
+        >
+          Previous
+        </button>
+      </div>
     </>
   );
 };

@@ -34,24 +34,28 @@ export const Starship = () => {
           <div></div>
         )}
       </div>
-      <button
-        disabled={
-          star.next === "https://www.swapi.tech/api/people?page=9&limit=10"
-        }
-        onClick={() => {
-          setUrl(star.next);
-        }}
-      >
-        Next
-      </button>
-      <button
-        disabled={star.previous === null}
-        onClick={() => {
-          setUrl(star.previous);
-        }}
-      >
-        Previous
-      </button>
+      <div className="d-flex justify-content-center mb-4">
+        <button
+          className="btn btn-secondary bb"
+          disabled={
+            star.next === "https://www.swapi.tech/api/people?page=9&limit=10"
+          }
+          onClick={() => {
+            setUrl(star.next);
+          }}
+        >
+          Next
+        </button>
+        <button
+          className="btn btn-secondary mx-2 bb"
+          disabled={star.previous === null}
+          onClick={() => {
+            setUrl(star.previous);
+          }}
+        >
+          Previous
+        </button>
+      </div>
     </>
   );
 };

@@ -34,24 +34,29 @@ export const People = () => {
           <div></div>
         )}
       </div>
-      <button
-        disabled={
-          people.next === "https://www.swapi.tech/api/people?page=9&limit=10"
-        }
-        onClick={() => {
-          setUrl(people.next);
-        }}
-      >
-        next
-      </button>
-      <button
-        disabled={people.previous === null}
-        onClick={() => {
-          setUrl(people.previous);
-        }}
-      >
-        Previous
-      </button>
+
+      <div className="d-flex justify-content-center mb-4">
+        <button
+          className="btn btn-secondary bb"
+          disabled={
+            people.next === "https://www.swapi.tech/api/people?page=9&limit=10"
+          }
+          onClick={() => {
+            setUrl(people.next);
+          }}
+        >
+          Next
+        </button>
+        <button
+          className="btn btn-secondary mx-2 bb"
+          disabled={people.previous === null}
+          onClick={() => {
+            setUrl(people.previous);
+          }}
+        >
+          Previous
+        </button>
+      </div>
     </>
   );
 };

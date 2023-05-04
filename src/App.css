@@ -37,6 +37,9 @@
   }
 }
 
+body {
+  background-color: black;
+}
 .nav-link {
   color: rgb(228, 228, 222);
   font-weight: 600;
@@ -47,7 +50,11 @@
 
 }
 
-.home {
-  background-color: black;
+.as {
+ margin: auto;
+
+ 
 }
+
+
 

@@ -1,13 +1,17 @@
 import SocialMedia from "../data/SocialMedia";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  const menu = ["People", "Films", "Starship", "Planets"];
   return (
-    <nav className="navbar navbar-expand-lg bg-dark p-3 ">
-      <div className="container-fluid">
-        <img
-          src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254"
-          style={{ width: "60px" }}
-        />
+    <nav className="navbar  navbar-expand-md bg-dark p-3 ">
+      <div className="container-fluid ">
+        <Link to="/">
+          <img
+            src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png?region=0,0,586,254"
+            style={{ width: "60px" }}
+          />
+        </Link>
 
         <button
           className="navbar-toggler"
@@ -20,28 +24,15 @@ const NavBar = () => {
         >
           <span className="navbar-toggler-icon text-warning"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item ">
-              <a className="nav-link" href="#">
-                Characters
-              </a>
-            </li>
-            <li className="nav-item ">
-              <a className="nav-link" href="#">
-                Vehicules
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Starships
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Planets
-              </a>
-            </li>
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul className="navbar-nav">
+            {menu.map((menus, i) => (
+              <li key={i}>
+                <Link className="nav-link" to={`/${menus}`}>
+                  {menus}
+                </Link>
+              </li>
+            ))}
 
             <li className="nav-item dropdown">
               <a
@@ -57,8 +48,8 @@ const NavBar = () => {
                 {SocialMedia.map(({ id, url, icon }, i) => {
                   return (
                     <li key={i}>
-                      <a className="dropdown-item" href={url}>
-                        {icon}
+                      <a className="dropdown-item" href={url} target="_blank">
+                        {icon} {id}
                       </a>
                     </li>
                   );
@@ -80,17 +71,6 @@ const NavBar = () => {
               </ul>
             </li>
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
         </div>
       </div>
     </nav>

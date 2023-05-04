@@ -1,23 +1,8 @@
-import { Cards } from "./Cards";
-
 const Home = () => {
   return (
     <div className="home">
-      <h1>Titulo</h1>
-      <div className="row">
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-      </div>
+      <h1>Hola</h1>
+      <div className="row"></div>
     </div>
   );
 };

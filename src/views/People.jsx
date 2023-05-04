@@ -7,13 +7,12 @@ export const People = () => {
 
   useEffect(() => {
     try {
-      const getInfoSW = async () => {
+      const getInfoPeople = async () => {
         const res = await fetch(url);
         const data = await res.json();
-        console.log(data.results);
         setPeople(data);
       };
-      getInfoSW();
+      getInfoPeople();
     } catch (error) {
       console.log("error", error);
     }
@@ -21,18 +20,20 @@ export const People = () => {
 
   return (
     <>
-      {people.length !== 0 ? (
-        people.results.map(({ name, url, uid }) => (
-          <Cards
-            img={`https://starwars-visualguide.com/assets/img/characters/${uid}.jpg`}
-            key={uid}
-            title={name}
-            url={url}
-          />
-        ))
-      ) : (
-        <div></div>
-      )}
+      <div className="row justify-content-center">
+        {people.length !== 0 ? (
+          people.results.map(({ name, url, uid }) => (
+            <Cards
+              img={`https://starwars-visualguide.com/assets/img/characters/${uid}.jpg`}
+              key={uid}
+              title={name}
+              url={`/People/${uid}`}
+            />
+          ))
+        ) : (
+          <div></div>
+        )}
+      </div>
       <button
         disabled={
           people.next === "https://www.swapi.tech/api/people?page=9&limit=10"

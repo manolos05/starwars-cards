@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router-dom";
 
 export const FilmCards = () => {
   const [film, setFilm] = useState([]);
@@ -36,9 +36,9 @@ export const FilmCards = () => {
               <div className="card-body">
                 <h5 className="card-title">Planet: {properties.title}</h5>
                 <ul key={uid}>
-                  <li>director: {properties.director}</li>
-                  <li>producer: {properties.producer}</li>
-                  <li>release_date: {properties.release_date}</li>
+                  <li>Director: {properties.director}</li>
+                  <li>Producer: {properties.producer}</li>
+                  <li>Release Date: {properties.release_date}</li>
                 </ul>
               </div>
             </div>
@@ -47,6 +47,11 @@ export const FilmCards = () => {
       ) : (
         <div></div>
       )}
+      <div className="mt-4 d-flex  justify-content-center">
+        <Link to="/Films">
+          <button className="btn btn-secondary bb">Back to Films</button>
+        </Link>
+      </div>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router-dom";
 
 export const PeopleCard = () => {
   const [people, setPeople] = useState([]);
@@ -22,8 +22,8 @@ export const PeopleCard = () => {
 
   return (
     <>
-      {people.length !== 0 ? (
-        <div className="card  as p-0  mt-4" style={{ width: "50%" }}>
+      <div className="card  as p-0  mt-4" style={{ width: "50%" }}>
+        {people.length !== 0 ? (
           <div className="row g-0">
             <div className="col-md-4">
               <img
@@ -50,10 +50,15 @@ export const PeopleCard = () => {
               </div>
             </div>
           </div>
-        </div>
-      ) : (
-        <div></div>
-      )}
+        ) : (
+          <div></div>
+        )}
+      </div>
+      <div className="mt-4 d-flex  justify-content-center">
+        <Link to="/People">
+          <button className="btn btn-secondary bb">Back to home</button>
+        </Link>
+      </div>
     </>
   );
 };

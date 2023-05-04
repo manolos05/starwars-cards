@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router-dom";
 
 const StarshipCard = () => {
   const [star, setStar] = useState([]);
@@ -51,6 +51,11 @@ const StarshipCard = () => {
       ) : (
         <div></div>
       )}
+      <div className="mt-4 d-flex  justify-content-center">
+        <Link to="/Starship">
+          <button className="btn btn-secondary bb">Back to Starships</button>
+        </Link>
+      </div>
     </>
   );
 };

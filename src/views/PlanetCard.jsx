@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router-dom";
 
 export const PlanetCards = () => {
   const [planet, setPlanet] = useState([]);
@@ -50,6 +50,11 @@ export const PlanetCards = () => {
         ) : (
           <div></div>
         )}
+      </div>
+      <div className="mt-4 d-flex  justify-content-center">
+        <Link to="/Planets">
+          <button className="btn btn-secondary bb">Back to Planets</button>
+        </Link>
       </div>
     </>
   );

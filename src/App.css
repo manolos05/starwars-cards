@@ -52,9 +52,10 @@ body {
 
 .as {
  margin: auto;
-
- 
 }
 
+.bb {
+  border: 1px solid white;
+}
 
 
